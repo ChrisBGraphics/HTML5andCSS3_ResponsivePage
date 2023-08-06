@@ -1,0 +1,275 @@
+@charset "UTF-8";
+/* Chris Borowski*/
+
+/* ------------------------------------------------------------ */
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+/* ------------------------------------------------------------ */
+/* General Styles */
+body {
+  margin: 0;
+  background-color: lightgoldenrodyellow;
+}
+
+p {
+  padding: 1vw;
+}
+/* ------------------------------------------------------------ */
+/* Media Styles */
+img {
+  width: 100%;
+  height: auto;
+}
+
+video {
+  width: 100%;
+  height: auto;
+}
+
+/* Add shadow to help make the font stick out */
+figure {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-style: italic;
+  font-size: 15px;
+  text-shadow: 3px 3px 3px black;
+}
+
+figcaption {
+  position: absolute;
+  bottom: 1vh;
+  left: 1vw;
+}
+
+/* ------------------------------------------------------------ */
+/* Navagation Styles */
+
+nav {
+  background-color: khaki;
+  overflow: hidden;
+  /* padding: 2vw; */
+}
+
+/* Navigation link */
+nav a:link {
+  float: left;
+  font-size: 18px;
+  color: brown;
+  padding: 10px;
+  text-decoration: none;
+}
+
+/* Hovering state over the navigation links */
+nav a:hover {
+  color: rgb(255, 166, 0);
+  background-color: rgb(250, 244, 188);
+}
+
+nav a:active,
+nav a:visited {
+  color: orangered;
+}
+
+/* ------------------------------------------------------------ */
+/* Grid Styles */
+
+/* standard layout of the container for the main page */
+.grid-container-main {
+  background-color: goldenrod;
+  display: grid;
+  gap: 1vw;
+  grid-template-areas:
+    "mainnav"
+    "header"
+    "section"
+    "aside"
+    "footer";
+}
+
+/* standard layout for the gallery and contact pages */
+.grid-container-gallery,
+.grid-container-contacts {
+  background-color: goldenrod;
+  display: grid;
+  gap: 1vw;
+  grid-template-areas:
+    "mainnav"
+    "header"
+    "article"
+    "footer";
+}
+
+.grid-item {
+  padding: 2vw;
+}
+
+/* Take out the padding just for the main navigation */
+.grid-mainnav {
+  background-color: khaki;
+  grid-area: mainnav;
+  padding: 0vw;
+}
+
+.grid-header {
+  background-color: lightgoldenrodyellow;
+  background-image: url(/img/dogs-289446_banner.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-area: header;
+}
+
+.grid-section {
+  background-color: lightgoldenrodyellow;
+  grid-area: section;
+}
+
+.grid-article {
+  background-color: lightgoldenrodyellow;
+  grid-area: article;
+}
+
+.grid-aside {
+  background-color: lightgoldenrodyellow;
+  grid-area: aside;
+}
+
+.grid-footer {
+  background-color: lightgoldenrodyellow;
+  text-align: center;
+  grid-area: footer;
+}
+
+/* ------------------------------------------------------------ */
+/* Gallery Styles */
+#gallery-header {
+    text-align: center;
+    text-decoration: underline;
+}
+
+/* Gallery uses flex to display the gallery */
+.gallery-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.gallery-column {
+  padding: 0 1vw;
+  flex: 100%;
+  max-width: 100%;
+}
+
+.gallery-column img {
+  margin-top: 2vw;
+  vertical-align: middle;
+}
+/* ------------------------------------------------------------ */
+/* Flex Styles */
+
+/* Makes the text white and gives it a shadow */
+.flex-headertext {
+  color: white;
+  text-align: center;
+  text-shadow: 5px 5px 5px black;
+}
+
+/* ------------------------------------------------------------ */
+/* Form Styles */
+form {
+  padding: 3vw;
+  background-color: rgb(248, 223, 168);
+}
+form h2 {
+  text-align: center;
+}
+
+form p {
+  padding: 1vw;
+  margin-bottom: 2vh;
+}
+
+form label {
+  font-weight: bold;
+}
+
+textarea {
+  height: 200px;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 1vw;
+}
+
+input[type="text"]:hover,
+textarea:hover {
+  background-color: rgb(236, 236, 236);
+}
+
+input[type="checkbox"] {
+  margin: 10px;
+}
+
+/* increase the size of the checkbox when hovering */
+/* This uses transform instead of increasing the padding */
+input[type="checkbox"]:hover {
+  position: relative;
+  transform: scale(1.2);
+}
+
+input[type="submit"] {
+  padding: 2vw;
+  background-color: orange;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+input[type="submit"]:hover {
+  background-color: rgb(255, 215, 141);
+}
+
+/* ------------------------------------------------------------ */
+/* Media Output */
+/* the layout of the main page and the galley change depending 
+    on the width of the page */
+
+@media only screen and (min-width: 768px) {
+    /* section extends out by 75% */
+  .grid-container-main {
+    grid-template-areas:
+      "mainnav mainnav mainnav mainnav"
+      "header header header header"
+      "section section section aside"
+      "footer footer footer footer";
+  }
+
+  /* Displays 2 columns */
+  .gallery-column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+    /* section extends out by 80% */
+  .grid-container-main {
+    grid-template-areas:
+      "mainnav mainnav mainnav mainnav mainnav"
+      "header header header header header"
+      "section section section section aside"
+      "footer footer footer footer footer";
+  }
+
+  /* Displays 4 columns */
+  .gallery-column {
+    flex: 25%;
+    max-width: 25%;
+  }
+}

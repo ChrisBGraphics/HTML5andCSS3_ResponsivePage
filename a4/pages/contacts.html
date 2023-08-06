@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- Chris Borowski -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+    <link rel="stylesheet" href="/css/myStyles.css">
+</head>
+
+<body>
+    <div class="grid-container-contacts">
+        <div class="grid-item grid-mainnav">
+            <nav>
+                <a href="/index.html">Home</a>
+                <a href="/pages/gallery.html">Gallery</a>
+                <a href="/pages/contacts.html">Contacts</a>
+            </nav>
+        </div>
+
+        <div class="grid-item grid-header">
+            <header class="flex-header">
+                <div class="flex-headertext">
+                    <h1>Contact Us</h1>
+                </div>
+            </header>
+        </div>
+
+        <article class="grid-item grid-article">
+            <h2> General Enquiries</h2>
+            <p>
+            Phone: (123) 456-7890 <br>
+            Email: <a href="mailto:contact@dogs.com">contact@dogs.com</a>
+            </p>
+
+            <form action="#">
+                <h2>Feedback</h2>
+                <p>
+                    <label> First Name</label> <br>
+                    <input type="text" id="fname" name="firstname" placeholder="Your name.."><br>
+                    <label> Last Name</label> <br>
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name.."><br>
+                    <label> Email </label> <br>
+                    <input type="text" id="emailadd" name="mail" placeholder="Email address" required>
+                </p>
+                <p>
+                    <label>Did we feature your favourite type of dog?</label><br>
+                    <input type="checkbox" name="yes" id="yes">
+                    <label>Yes</label>
+                    <input type="checkbox" name="no" id="no">
+                    <label>No</label>
+                </p>
+                <p>
+                    <label>Share your general feedback here</label> <br>
+                    <textarea name="comment"></textarea>
+                </p>
+                <p>
+                    <input type="submit" value="Submit">
+                </p>
+
+            </form>
+
+        </article>
+
+        <footer class="grid-item grid-footer">
+            <p>
+                Posted by: <cite>Chris Borowski</cite><br>
+                Copyright &copy; 2022
+            </p>
+        </footer>
+
+    </div>
+</body>
+
+</html>
